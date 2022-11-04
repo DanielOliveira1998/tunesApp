@@ -7,7 +7,6 @@ class Search extends Component {
     this.state = {
       searchInput: '',
       isBtnDisabled: true,
-      isLoading: false,
     };
   }
 
