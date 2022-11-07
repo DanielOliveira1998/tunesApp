@@ -13,22 +13,13 @@ class Login extends Component {
     };
   }
 
-  componentDidMount() {
-    this.fetchCreateUserAPI();
-  }
-
   fetchCreateUserAPI = async () => {
     const { userName } = this.state;
     this.setState({
       isLoading: true,
     });
     await createUser({ name: userName });
-    this.setState({
-      isLoading: false,
-    });
-    if (userName) {
-      this.pushHistory('/search');
-    }
+    this.pushHistory('/search');
   };
 
   pushHistory = (pathName) => {

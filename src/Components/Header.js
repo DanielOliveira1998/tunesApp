@@ -32,9 +32,9 @@ class Header extends Component {
           : (
             <div>
               <h2 data-testid="header-user-name">{userName.name}</h2>
-              <Link exact to="/search" data-testid="link-to-search">Search</Link>
-              <Link exact to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-              <Link exact to="/profile" data-testid="link-to-profile">Profile</Link>
+              <Link to="/search" data-testid="link-to-search">Search</Link>
+              <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
+              <Link to="/profile" data-testid="link-to-profile">Profile</Link>
             </div>
           )}
       </header>
