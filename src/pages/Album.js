@@ -30,7 +30,7 @@ class Album extends Component {
   render() {
     const { musicsList, artistData } = this.state;
     // console.log(artistData.artistName);
-    // console.log(musicsList);
+    console.log(musicsList);
     return (
       <div data-testid="page-album">
         <Header />
@@ -44,6 +44,7 @@ class Album extends Component {
             trackName={ music.trackName }
             previewUrl={ music.previewUrl }
             trackId={ music.trackId }
+            kind={ music.kind }
           />
         ))}
       </div>
