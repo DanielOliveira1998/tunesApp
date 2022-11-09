@@ -18,8 +18,7 @@ class Album extends Component {
   }
 
   fetchGetMusicsAPI = async () => {
-    // const {match: {params: {id}}}= this.props;
-    const { id } = this.props.match.params;
+    const { match: { params: { id } } } = this.props;
     const response = await getMusics(id);
     const musicsFiltered = response.filter((_item, index) => index !== 0);
     this.setState({
@@ -44,6 +43,7 @@ class Album extends Component {
             key={ music.trackId }
             trackName={ music.trackName }
             previewUrl={ music.previewUrl }
+            trackId={ music.trackId }
           />
         ))}
       </div>
