@@ -94,8 +94,8 @@ class Search extends Component {
                 data-testid={ `link-to-album-${item.collectionId}` }
               >
                 <div>
-                  <img src={ item.artworkUrl100 } alt={ item.collectionName } />
                   <h2>{item.collectionName}</h2>
+                  <img src={ item.artworkUrl100 } alt={ item.collectionName } />
                   <p>{item.artistName}</p>
                 </div>
               </Link>
