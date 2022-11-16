@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import MusicCard from '../Components/MusicCard';
 import getMusics from '../services/musicsAPI';
+// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   constructor() {
@@ -10,27 +11,34 @@ class Album extends Component {
     this.state = {
       artistData: [],
       musicsList: [],
+      favoriteSogns: [],
     };
   }
 
   componentDidMount() {
     this.fetchGetMusicsAPI();
+    // this.fetchgetFavoriteSongsAPI();
   }
 
   fetchGetMusicsAPI = async () => {
     const { match: { params: { id } } } = this.props;
     const response = await getMusics(id);
-    const musicsFiltered = response.filter((_item, index) => index !== 0);
+    const filteredMusics = response.filter((_item, index) => index !== 0);
     this.setState({
       artistData: response[0],
-      musicsList: musicsFiltered,
+      musicsList: filteredMusics,
     });
   };
 
+  // fetchgetFavoriteSongsAPI = async () => {
+  //   const response = await getFavoriteSongs();
+  //   this.setState({ favoriteSogns: response });
+  // };
+
   render() {
-    const { musicsList, artistData } = this.state;
+    const { musicsList, artistData, favoriteSogns } = this.state;
     // console.log(artistData.artistName);
-    console.log(musicsList);
+    console.log(favoriteSogns);
     return (
       <div data-testid="page-album">
         <Header />
