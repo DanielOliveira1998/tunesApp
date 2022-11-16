@@ -50,7 +50,7 @@ class MusicCard extends Component {
           type="checkbox"
           name="favorite"
           id="favorite"
-          checked={ favoriteSogns.some((song) => song.trackName === trackName) }
+          // checked={ favoriteSogns.some((song) => song.trackName === trackName) }
           data-testid={ `checkbox-music-${trackId}` }
           onClick={ this.fetchAddSongAPI }
         />

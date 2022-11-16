@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import MusicCard from '../Components/MusicCard';
 import getMusics from '../services/musicsAPI';
-// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class Album extends Component {
 
   componentDidMount() {
     this.fetchGetMusicsAPI();
-    // this.fetchgetFavoriteSongsAPI();
+    this.fetchgetFavoriteSongsAPI();
   }
 
   fetchGetMusicsAPI = async () => {
@@ -30,10 +30,10 @@ class Album extends Component {
     });
   };
 
-  // fetchgetFavoriteSongsAPI = async () => {
-  //   const response = await getFavoriteSongs();
-  //   this.setState({ favoriteSogns: response });
-  // };
+  fetchgetFavoriteSongsAPI = async () => {
+    const response = await getFavoriteSongs();
+    this.setState({ favoriteSogns: response });
+  };
 
   render() {
     const { musicsList, artistData, favoriteSogns } = this.state;
